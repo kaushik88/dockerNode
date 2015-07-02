@@ -5,7 +5,7 @@ machine:
 dependencies:
   override:
     - docker info
-    - docker build -t ubuntu/centos-node-hello .
+    - docker build -t ubuntu/centos-node-hello app/.
 
 test:
   override:
