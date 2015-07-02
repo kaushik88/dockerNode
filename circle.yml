@@ -5,11 +5,11 @@ machine:
 dependencies:
   override:
     - docker info
-    - docker build -t ubuntu/centos-node-hello app/.
+    - docker build -t kaushik88/dockernode app/.
 
 test:
   override:
-   - docker run -p 49160:8080 -d ubuntu/centos-node-hello 
+   - docker run -p 49160:8080 -d kaushik88/dockernode
    - curl --retry 10 --retry-delay 5 -v http://localhost:49160
 
 deployment:
@@ -17,4 +17,4 @@ deployment:
     branch: master
     commands:
       - docker login -e kaushik.me88@gmail.com -u kaushik88 -p mistakes0
-      - docker push ubuntu/centos-node-hello
+      - docker push kaushik88/dockernode
